@@ -4,30 +4,30 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9*/
 
-double[,] array = new double[3, 4];
-void NewArray(double[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
-        }
-    }
-}
-void PrintArray(double[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write($"{array[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
-NewArray(array);
-PrintArray(array);
+// double[,] array = new double[3, 4];
+// void NewArray(double[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
+//         }
+//     }
+// }
+// void PrintArray(double[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// NewArray(array);
+// PrintArray(array);
 
 
 /*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
@@ -38,39 +38,41 @@ PrintArray(array);
 8 4 2 4
 17 -> такого числа в массиве нет*/
 
-Console.WriteLine("Введите размер строки массива: ");
-int numRows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите размер столбца массива: ");
-int numColums = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int[6, 7];
-Console.Write("Наш массив: ");
-Console.WriteLine();
-void NewArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = new Random().Next(0, 10);
-        }
-    }
-}
-NewArray(array);
-void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write($"{array[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
-PrintArray(array);
-if (numRows < array.GetLength(0) && numColums < array.GetLength(1))
-    Console.WriteLine($"Значение эллемента равняется: {array[numRows, numColums]}");
-else Console.WriteLine($"{numRows}, {numColums} Такого элемента в массиве нет");
+// Console.WriteLine("Введите размер строки массива: ");
+// int numRows = Convert.ToInt32(Console.ReadLine()) - 1;
+// Console.WriteLine("Введите размер столбца массива: ");
+// int numColums = Convert.ToInt32(Console.ReadLine()) - 1;
+// int[,] array = new int[6, 7];
+// Console.Write("Наш массив: ");
+// Console.WriteLine();
+// void NewArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             array[i, j] = new Random().Next(0, 10);
+//         }
+//     }
+// }
+// NewArray(array);
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+// PrintArray(array);
+// if (numRows < 0 | numRows > array.GetLength(0) - 1 | numColums < 0 | numColums > array.GetLength(1) - 1)
+// {
+//     Console.WriteLine("Такого элемента в массиве нет");
+// }
+// else Console.WriteLine($"Значение эллемента равняется: {array[numRows, numColums]}");
 
 
 /*Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов 
@@ -123,12 +125,9 @@ void MiddleSum(int[,] array)
         double result = 0;
         for (int j = 0; j < array.GetLength(0); j++)
         {
-            {
-                result += array[j, i];
-            }
-            mdArray[i] = result / array.GetLength(0);
+            result += array[j, i];
         }
-        Console.WriteLine();
+        mdArray[i] = result / array.GetLength(0);
     }
 }
 MiddleSum(array);
